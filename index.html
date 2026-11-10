@@ -161,6 +161,62 @@ textarea{width:100%;flex:1;border:0;resize:none;background:var(--win);color:var(
 .al{display:flex;gap:14px;align-items:center;padding:8px 10px;border-radius:5px}.al:hover{background:var(--hov)}
 #allv{height:calc(100% - 100px);overflow:auto}#allb{cursor:pointer}
 @media (max-width:760px){#wgb span:last-child{display:none}.wgrid{grid-template-columns:1fr}}
+
+/* Windows 11 Fluent polish */
+:root{--mica:rgba(248,250,255,.78);--win:#f3f3f3;--tbar:#f3f3f3;--card:rgba(255,255,255,.88);--txt:#1b1b1b;--sub:#5d5d5d;--bd:rgba(0,0,0,.09);--hov:rgba(0,0,0,.055);--acc:#0067c0}
+body:not(.light){--mica:rgba(32,32,32,.78);--win:#202020;--tbar:#202020;--card:rgba(45,45,45,.92);--txt:#f7f7f7;--sub:#c5c5c5;--bd:rgba(255,255,255,.1);--hov:rgba(255,255,255,.075);--acc:#60cdff}
+html,body{font-family:"Segoe UI Variable","Segoe UI",system-ui,sans-serif;letter-spacing:.005em}
+button{cursor:pointer;transition:background-color .14s ease,border-color .14s ease,transform .14s ease}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+#wall{background-color:#07152e}
+.dic{width:92px;padding:7px 4px 6px;border-radius:5px;text-shadow:0 1px 3px rgba(0,0,0,.86)}
+.dic .i{filter:drop-shadow(0 2px 3px rgba(0,0,0,.22))}
+.win{border-radius:9px;border-color:rgba(255,255,255,.18);box-shadow:0 18px 55px rgba(0,0,0,.38),0 2px 8px rgba(0,0,0,.18);backdrop-filter:blur(22px) saturate(1.35);-webkit-backdrop-filter:blur(22px) saturate(1.35);transition:box-shadow .16s ease}
+.win:focus-within{box-shadow:0 22px 64px rgba(0,0,0,.42),0 0 0 1px rgba(255,255,255,.08)}
+.win.max{border-radius:0}
+.tb{height:36px;background:var(--tbar)}
+.tb button{height:36px}
+.tb button:hover{background:var(--hov)}
+.tb .x:hover{background:#c42b1c}
+.card,.app,.wc{border-radius:8px}
+.btn{border-radius:5px;min-height:30px}
+.side div,.file,.tile,.pin div,.rec div,.al{border-radius:6px}
+#bar{height:48px;background:rgba(244,246,250,.78);backdrop-filter:blur(28px) saturate(1.6);-webkit-backdrop-filter:blur(28px) saturate(1.6);border-top:1px solid rgba(255,255,255,.42);box-shadow:0 -5px 24px rgba(0,0,0,.12)}
+body:not(.light) #bar{background:rgba(31,32,36,.82);border-top-color:rgba(255,255,255,.08)}
+.tbn{width:44px;height:42px;border-radius:6px}
+.tbn:hover,.tr:hover{background:rgba(255,255,255,.45)}
+body:not(.light) .tbn:hover,body:not(.light) .tr:hover{background:rgba(255,255,255,.1)}
+#sbox{background:rgba(255,255,255,.58);border-color:rgba(0,0,0,.08);color:#444;border-radius:6px;height:34px}
+#sbox:hover{background:rgba(255,255,255,.9)}
+body:not(.light) #sbox{background:rgba(255,255,255,.08);border-color:var(--bd);color:var(--sub)}
+#tray .tr{border-radius:6px}
+.fly{border-radius:12px;box-shadow:0 18px 54px rgba(0,0,0,.28),0 2px 8px rgba(0,0,0,.12);border-color:rgba(255,255,255,.45)}
+body:not(.light) .fly{border-color:rgba(255,255,255,.12)}
+#start{border-radius:12px;padding-top:26px}
+#ssearch{border-radius:6px;border:1px solid rgba(0,0,0,.14);border-bottom:2px solid var(--acc);box-shadow:0 1px 3px rgba(0,0,0,.06)}
+body:not(.light) #ssearch{border-color:var(--bd);border-bottom-color:var(--acc)}
+.sh span{border-radius:5px}
+.pin div{padding-top:12px;padding-bottom:10px}
+.sf{border-radius:0 0 12px 12px;background:rgba(245,246,248,.72)}
+body:not(.light) .sf{background:rgba(255,255,255,.055)}
+.sf .ava,.ava{box-shadow:0 1px 4px rgba(0,0,0,.16)}
+#qs{border-radius:12px;padding:20px}
+.tg div{height:62px;border-radius:7px}
+.tg div.on{background:#0067c0}
+body:not(.light) .tg div.on{background:#60cdff;color:#10202b}
+#cal{border-radius:12px}
+.cg span{border-radius:6px}
+.cg .td{border-radius:50%}
+#ctx{border-radius:8px}
+#ctx div{border-radius:5px}
+#lock{background-size:cover}
+#lt{font-weight:500;letter-spacing:-3px;text-shadow:0 2px 22px rgba(0,0,0,.16)}
+#ld{text-shadow:0 1px 8px rgba(0,0,0,.2)}
+#login .go{border-radius:5px;min-width:120px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+#login .go:focus-visible{outline:2px solid white}
+#dim{backdrop-filter:brightness(.95)}
+@media(max-width:760px){#bar{height:48px}.win{min-width:min(280px,calc(100vw - 12px));max-width:calc(100vw - 12px)}}
+
 </style>
 </head>
 <body>
@@ -376,6 +432,25 @@ $("#ssearch").onkeydown=e=>{if(e.key!=="Enter")return;const v=e.target.value.tri
 $("#pwr").onclick=e=>{e.stopPropagation();$("#pmenu").classList.toggle("open")};
 $$("#pmenu div").forEach(d=>d.onclick=()=>{if(d.dataset.p==="restart")location.reload();else{$("#off").style.display="grid"}});
 $("#off").onclick=()=>location.reload();
+
+
+// Windows keyboard shortcuts: Start, File Explorer, Settings, and active-window close.
+addEventListener("keydown",e=>{
+ const key=e.key.toLowerCase(),win=e.metaKey||e.key==="Meta";
+ if(e.key==="Escape"){
+   FL.forEach(f=>$(f).classList.remove("open"));
+   $("#tvw").classList.remove("open");
+   $("#pmenu").classList.remove("open");
+   $("#ctx").style.display="none";
+ }
+ if((win&&key==="e")||(e.ctrlKey&&e.altKey&&key==="e")){e.preventDefault();launch("explorer")}
+ if((win&&key==="i")||(e.ctrlKey&&e.altKey&&key==="i")){e.preventDefault();launch("settings")}
+ if((win&&key==="s")||(e.ctrlKey&&e.altKey&&key==="s")){e.preventDefault();flyout("#start");setTimeout(()=>$("#ssearch").focus(),20)}
+ if(e.altKey&&key==="f4"){
+   const active=$(".win").filter(w=>!w.classList.contains("hide")).sort((a,b)=>(+b.style.zIndex)-(+a.style.zIndex))[0];
+   if(active){e.preventDefault();const x=active.querySelector('[data-a="x"]');x&&x.click()}
+ }
+});
 
 /* clicks */
 document.addEventListener("click",e=>{
