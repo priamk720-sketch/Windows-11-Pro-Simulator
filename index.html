@@ -307,7 +307,7 @@ const WP={Bloom:bloom("#031026","#7fd0ff","#1b49c8"),"Bloom light":bloom("#cfe3f
 const setWp=n=>{document.documentElement.style.setProperty("--wp",WP[n]);save("wp",n)};
 const setMode=m=>{document.body.classList.toggle("light",m==="light");save("mode",m);tgSync()};
 const setAcc=c=>{document.documentElement.style.setProperty("--acc",c);save("acc",c)};
-setWp(load("wp")&&WP[load("wp")]?load("wp"):"Bloom");setMode(load("mode")||"dark");if(load("acc"))setAcc(load("acc"));
+setWp(load("wp")&&WP[load("wp")]?load("wp"):"Bloom");setMode(load("mode")||"light");if(load("acc"))setAcc(load("acc"));
 
 /* apps */
 const APPS={
